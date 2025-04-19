@@ -245,18 +245,24 @@
                     </tr>
                     <tr>
                       <td><b class="sub-title-td">Owner</b></td>
-                      <td>{{ owner.name }} - {{ owner.email }}</td>
+                      <td>{{ owner.name }} - {{ owner.id }}</td>
                     </tr>
                     <tr>
                       <td><b class="sub-title-td">Form</b></td>
-                      <td>{{ form.title }} - {{ form.type }}</td>
+                      <td>
+                        {{ form.title }} - {{ form.type }} - {{ form.id }}
+                      </td>
                     </tr>
                   </table>
 
                   <div style="margin-top: 30px; text-align: center">
-                    <button href="" target="_blank" class="btn">
+                    <a
+                      href="https://app-dev.cottonteam.com/forms/68001a0e0ed23a6e4b4c68ee/submission/{{ id }}"
+                      target="_blank"
+                      class="btn"
+                    >
                       View Form
-                    </button>
+                    </a>
                   </div>
                 </td>
               </tr>
