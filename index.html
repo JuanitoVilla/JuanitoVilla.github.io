@@ -135,10 +135,21 @@
       <div class="main-content">
         <div class="content">
           <tr>
-            <td><b>{{ label("ifs_connect.data.company") }}</b></td>
-            <td>{{ value("ifs_connect.data.company.label") }}</td>
+            <td><b>Company</b></td>
+            <td>
+              {{ value("ifs_connect.data.company.internal_id") }} - {{
+              value("ifs_connect.data.company.label") }}
+            </td>
+          </tr>
+          <tr>
+            <td><b>Project</b></td>
+            <td>
+              {{ value("ifs_connect.data.project.project_id") }} - {{
+              value("ifs_connect.data.project.project_name") }}
+            </td>
           </tr>
         </div>
+
         <div class="buttons">
           <a href="#" class="btn">View Form in App</a>
           <a href="#" class="btn">Download PDF</a>
