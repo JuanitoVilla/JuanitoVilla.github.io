@@ -14,151 +14,258 @@
         max-width: 200px;
       }
       body {
+        background-color: #333333;
+        font-family: lato, "helvetica neue", helvetica, arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
         margin: 0;
         padding: 0;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
-        min-height: 100vh;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%;
+      }
+      table td {
         font-family: lato, "helvetica neue", helvetica, arial, sans-serif;
-        background: linear-gradient(to bottom, #333333 50%, #ffffff 50%);
+        font-size: 14px;
+        vertical-align: top;
+        padding: 8px;
       }
-
-      .page-container {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
+      .container {
+        display: block;
+        margin: 0 auto !important;
+        max-width: 580px;
+        padding: 10px;
+        width: 580px;
       }
-
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 580px;
+        padding: 10px;
+      }
+      .main {
+        background: #ffffff;
+        border-radius: 8px;
+        width: 100%;
+      }
       .header {
-        text-align: left;
         padding: 20px;
-        color: #ffffff;
-        display: flex;
-        margin-bottom: auto;
-        margin-top: auto;
+        background-color: #333333;
       }
-
       .header img {
-        width: 150px;
         margin-right: 15px;
         vertical-align: middle;
       }
-
       .header-title {
-        display: inline-block;
         color: #b4975a;
-        font-size: 32px;
+        font-size: 24px;
         margin-left: 15px;
         vertical-align: middle;
       }
-
-      .main-content {
-        background: #ffffff;
-        border-radius: 8px;
-        padding: 40px;
-        margin-top: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .title {
-        font-size: 36px;
-        color: #333;
-        margin-bottom: 30px;
-        text-align: center;
-        border-bottom: 2px solid #b4975a;
-        padding-bottom: 20px;
-      }
-
-      .content {
-        font-size: 16px;
-        line-height: 1.6;
-        color: #666;
-      }
-
-      .buttons {
-        text-align: center;
-        margin-top: 30px;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 12px 24px;
-        background-color: #b4975a;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        margin: 10px;
-        font-weight: 500;
-        transition: background-color 0.3s;
-      }
-
-      .btn:hover {
-        background-color: #987938;
-      }
-
-      .footer {
-        text-align: center;
+      .wrapper {
+        box-sizing: border-box;
         padding: 20px;
-        color: #666;
-        margin-top: 40px;
       }
-
+      .content-block {
+        padding: 10px 20px;
+      }
+      .footer {
+        clear: both;
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+      }
+      .footer td,
+      .footer p,
+      .footer span,
+      .footer a {
+        color: #666666;
+        font-size: 12px;
+        text-align: center;
+      }
+      .data-table {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .data-table td {
+        border-bottom: 1px solid #eee;
+      }
+      .data-table td:first-child {
+        font-weight: bold;
+        width: 30%;
+      }
+      .btn {
+        box-sizing: border-box;
+        background-color: #b4975a;
+        border: solid 1px #b4975a;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0;
+        padding: 12px 25px;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+      .btn-primary table td {
+        background-color: #b4975a;
+      }
+      .btn-primary a {
+        background-color: #b4975a;
+        border-color: #b4975a;
+        color: #ffffff;
+      }
       @media only screen and (max-width: 620px) {
-        .page-container {
-          padding: 10px;
+        .container {
+          width: 100% !important;
+          padding: 0 !important;
         }
-
-        .main-content {
-          padding: 20px;
+        .content {
+          padding: 0 !important;
         }
-
+        .main {
+          border-radius: 0 !important;
+        }
         .header-title {
-          font-size: 24px;
-        }
-
-        .title {
-          font-size: 28px;
+          font-size: 20px !important;
         }
       }
     </style>
   </head>
   <body>
-    <div class="page-container">
-      <div class="header">
-        <img
-          src="https://cottonappteststorage.blob.core.windows.net/assets/logo.png"
-          alt="Cotton Holdings Inc."
-        />
-        <span class="header-title">{{ form.title }}</span>
-      </div>
-
-      <div class="main-content">
-        <div class="content">
-          <tr>
-            <td><b>Company</b></td>
-            <td>
-              {{ value("ifs_connect.data.company.internal_id") }} - {{
-              value("ifs_connect.data.company.label") }}
-            </td>
-          </tr>
-          <tr>
-            <td><b>Project</b></td>
-            <td>
-              {{ value("ifs_connect.data.project.project_id") }} - {{
-              value("ifs_connect.data.project.project_name") }}
-            </td>
-          </tr>
-        </div>
-
-        <div class="buttons">
-          <a href="#" class="btn">View Form in App</a>
-          <a href="#" class="btn">Download PDF</a>
-        </div>
-      </div>
-
-      <div class="footer">
-        <p>Cotton Holdings Inc.</p>
-      </div>
-    </div>
+    <table
+      role="presentation"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      class="body"
+    >
+      <tr>
+        <td>&nbsp;</td>
+        <td class="container">
+          <div class="content">
+            <!-- Header -->
+            <table role="presentation" class="main">
+              <tr>
+                <td class="header">
+                  <table
+                    role="presentation"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    width="100%"
+                  >
+                    <tr>
+                      <td width="200">
+                        <img
+                          src="https://cottonappteststorage.blob.core.windows.net/assets/logo.png"
+                          alt="Cotton Holdings Inc."
+                        />
+                      </td>
+                      <td
+                        style="
+                          vertical-align: middle;
+                          border-left: 1px solid #666666;
+                          padding-left: 20px;
+                        "
+                      >
+                        <span class="header-title">{{ form.title }}</span>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- Content -->
+              <tr>
+                <td class="wrapper">
+                  <table
+                    role="presentation"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    class="data-table"
+                  >
+                    <tr>
+                      <td><b>Company</b></td>
+                      <td>
+                        {{ value("ifs_connect.data.company.internal_id") }} - {{
+                        value("ifs_connect.data.company.label") }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Project</b></td>
+                      <td>
+                        {{ value("ifs_connect.data.project.project_id") }} - {{
+                        value("ifs_connect.data.project.project_name") }}
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- Buttons -->
+                  <table
+                    role="presentation"
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    class="btn btn-primary"
+                    style="margin-top: 20px"
+                  >
+                    <tr>
+                      <td align="center">
+                        <table
+                          role="presentation"
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                        >
+                          <tr>
+                            <td>
+                              <a href="#" target="_blank" class="btn"
+                                >View Form in App</a
+                              >
+                            </td>
+                            <td style="padding-left: 10px">
+                              <a href="#" target="_blank" class="btn"
+                                >Download PDF</a
+                              >
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!-- Footer -->
+            <div class="footer">
+              <table
+                role="presentation"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+              >
+                <tr>
+                  <td class="content-block">
+                    <span>Cotton Holdings Inc.</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
   </body>
 </html>
