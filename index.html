@@ -214,10 +214,11 @@
                   <h1 class="page-title" style="text-align: center">
                     {{ form.title }}
                   </h1>
-                  <!-- <p class="welcome-text">
-                    Hi, test has submitted the form successfully.
+                  <p class="welcome-text">
+                    Hi, {{ owner.data.email }} has submitted the form
+                    successfully.
                   </p>
-                  <div class="divider"></div> -->
+                  <div class="divider"></div>
                   <table
                     role="presentation"
                     border="0"
@@ -238,17 +239,6 @@
                         {{ value("ifs_connect.data.project.project_id") }} - {{
                         value("ifs_connect.data.project.project_name") }}
                       </td>
-                    </tr>
-                    <tr>
-                      <td><b class="sub-title-td">Owner</b></td>
-                      <td>
-                        {{ owner.data.email }} - {{ owner.data.first_name }} {{
-                        owner.data.last_name }}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><b class="sub-title-td">Form</b></td>
-                      <td>{{ form.title }}</td>
                     </tr>
                   </table>
 
