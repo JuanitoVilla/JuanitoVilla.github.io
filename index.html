@@ -240,33 +240,12 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><b class="sub-title-td">ID</b></td>
-                      <td>{{ id }}</td>
-                    </tr>
-                    <tr>
                       <td><b class="sub-title-td">Owner</b></td>
-                      <td>{{ owner.name }} - {{ owner.id }}</td>
+                      <td>{{ owner.data.email }}</td>
                     </tr>
                     <tr>
                       <td><b class="sub-title-td">Form</b></td>
-                      <td>
-                        {{ form.title }} - {{ form.type }} - {{ form.id }}
-                      </td>
-                    </tr>
-                    <!-- Debug section -->
-                    <tr>
-                      <td
-                        colspan="2"
-                        style="background: #444444; padding: 10px"
-                      >
-                        <pre style="color: #ffffff; white-space: pre-wrap">
-Form Object:
-{{ form | json }}
-
-Owner Object:
-{{ owner | json }}
-                        </pre>
-                      </td>
+                      <td>{{ form.title }}</td>
                     </tr>
                   </table>
 
