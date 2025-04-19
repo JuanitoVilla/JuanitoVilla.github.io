@@ -253,6 +253,21 @@
                         {{ form.title }} - {{ form.type }} - {{ form.id }}
                       </td>
                     </tr>
+                    <!-- Debug section -->
+                    <tr>
+                      <td
+                        colspan="2"
+                        style="background: #444444; padding: 10px"
+                      >
+                        <pre style="color: #ffffff; white-space: pre-wrap">
+Form Object:
+{{ form | json }}
+
+Owner Object:
+{{ owner | json }}
+                        </pre>
+                      </td>
+                    </tr>
                   </table>
 
                   <div style="margin-top: 30px; text-align: center">
