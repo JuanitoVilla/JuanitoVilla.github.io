@@ -41,25 +41,25 @@
       .container {
         display: block;
         margin: 0 auto !important;
-        max-width: 580px;
-        padding: 10px;
-        width: 580px;
+        max-width: 800px;
+        padding: 20px;
       }
       .content {
         box-sizing: border-box;
         display: block;
         margin: 0 auto;
-        max-width: 580px;
+        max-width: 800px;
         padding: 10px;
       }
       .main {
-        background: #ffffff;
-        border-radius: 8px;
+        background: #333333;
+        border-radius: 0;
         width: 100%;
       }
       .header {
         padding: 20px;
         background-color: #333333;
+        border-bottom: 0;
       }
       .header img {
         margin-right: 15px;
@@ -67,13 +67,17 @@
       }
       .header-title {
         color: #b4975a;
-        font-size: 24px;
+        font-size: 32px;
         margin-left: 15px;
         vertical-align: middle;
+        font-weight: normal;
       }
       .wrapper {
         box-sizing: border-box;
         padding: 20px;
+        background: #222222;
+        border-radius: 8px;
+        margin-top: 20px;
       }
       .content-block {
         padding: 10px 20px;
@@ -88,20 +92,37 @@
       .footer p,
       .footer span,
       .footer a {
-        color: #666666;
+        color: #ffffff;
         font-size: 12px;
         text-align: center;
       }
+      .page-title {
+        color: #ffffff;
+        font-size: 48px;
+        font-weight: normal;
+        text-align: left;
+        margin: 20px 0;
+        border-bottom: 2px solid #b4975a;
+        padding-bottom: 10px;
+      }
+      .welcome-text {
+        color: #cccccc;
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
       .data-table {
         width: 100%;
-        margin-bottom: 20px;
+        margin: 20px 0;
+        color: #ffffff;
       }
       .data-table td {
-        border-bottom: 1px solid #eee;
+        padding: 12px;
+        border-bottom: 1px solid #444444;
       }
       .data-table td:first-child {
         font-weight: bold;
         width: 30%;
+        color: #cccccc;
       }
       .btn {
         box-sizing: border-box;
@@ -111,12 +132,12 @@
         color: #ffffff;
         cursor: pointer;
         display: inline-block;
-        font-size: 14px;
-        font-weight: bold;
+        font-size: 16px;
+        font-weight: normal;
         margin: 0;
         padding: 12px 25px;
         text-decoration: none;
-        text-transform: capitalize;
+        text-transform: none;
       }
       .btn-primary table td {
         background-color: #b4975a;
@@ -126,19 +147,23 @@
         border-color: #b4975a;
         color: #ffffff;
       }
+      .divider {
+        border-bottom: 2px solid #b4975a;
+        margin: 20px 0;
+      }
       @media only screen and (max-width: 620px) {
         .container {
           width: 100% !important;
-          padding: 0 !important;
+          padding: 10px !important;
         }
         .content {
           padding: 0 !important;
         }
-        .main {
-          border-radius: 0 !important;
-        }
         .header-title {
-          font-size: 20px !important;
+          font-size: 24px !important;
+        }
+        .page-title {
+          font-size: 32px !important;
         }
       }
     </style>
@@ -173,22 +198,21 @@
                           alt="Cotton Holdings Inc."
                         />
                       </td>
-                      <td
-                        style="
-                          vertical-align: middle;
-                          border-left: 1px solid #666666;
-                          padding-left: 20px;
-                        "
-                      >
+                      <td style="vertical-align: middle; padding-left: 20px">
                         <span class="header-title">{{ form.title }}</span>
                       </td>
                     </tr>
                   </table>
                 </td>
               </tr>
-              <!-- Content -->
+              <!-- Title and Content -->
               <tr>
                 <td class="wrapper">
+                  <h1 class="page-title">{{ form.title }}</h1>
+                  <p class="welcome-text">
+                    Hi, Ashley Smart has submitted the form successfully.
+                  </p>
+                  <div class="divider"></div>
                   <table
                     role="presentation"
                     border="0"
@@ -217,30 +241,11 @@
                     border="0"
                     cellpadding="0"
                     cellspacing="0"
-                    class="btn btn-primary"
-                    style="margin-top: 20px"
+                    style="margin-top: 30px"
                   >
                     <tr>
-                      <td align="center">
-                        <table
-                          role="presentation"
-                          border="0"
-                          cellpadding="0"
-                          cellspacing="0"
-                        >
-                          <tr>
-                            <td>
-                              <a href="#" target="_blank" class="btn"
-                                >View Form in App</a
-                              >
-                            </td>
-                            <td style="padding-left: 10px">
-                              <a href="#" target="_blank" class="btn"
-                                >Download PDF</a
-                              >
-                            </td>
-                          </tr>
-                        </table>
+                      <td>
+                        <a href="#" target="_blank" class="btn">View Form</a>
                       </td>
                     </tr>
                   </table>
